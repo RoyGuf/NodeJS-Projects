@@ -8,6 +8,7 @@
 var fs = require('fs');
 var express = require('express');
 var app = express();
+var parser = require('./parser');
 
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function(req, res, next) {
@@ -32,6 +33,9 @@ app.route('/_api/package.json')
       res.type('txt').send(data.toString());
     });
   });
+app.get("/api/whoami", function (req, res) {
+  res.send(parser(req));
+})
   
 app.route('/')
     .get(function(req, res) {
