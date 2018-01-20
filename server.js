@@ -5,7 +5,7 @@
 var express = require('express');
 var app = express();
 var parser = require('./routes/parser');
-//var time = require('./timestamp');
+var time = require('./routes/timestamp');
 var shorty = require('./routes/shorter');
 var find = require('./routes/find');
 var bodyParser = require('body-parser');
@@ -39,7 +39,11 @@ app.get("/new/:url(*)", function(req,res){
 app.get("/:id", function (req, res) {
   find(req,res);
 })
-// http://expressjs.com/en/starter/basic-routing.html
+
+app.get("/time/:timestamp", function (req, res) {
+  res.send(time(req.params.timestamp));
+})
+
 app.get("/", function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
   });
