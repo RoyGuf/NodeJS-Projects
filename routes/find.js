@@ -15,7 +15,7 @@ function find(req,res){
 			  res.redirect(data[0].url)
 		  }else{
 			  db.close();
-			  res.end('Not Found');
+			  res.status(404).send('Not found');
 		  }
 	  })
 		  

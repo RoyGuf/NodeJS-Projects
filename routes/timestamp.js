@@ -15,6 +15,8 @@ function time (timestamp){
   if(!isNaN(date.getTime())){
     results.unix = Math.floor(date.getTime()/1000);
     results.natural = mon[date.getMonth()] + ' ' + date.getDate() +' '+ date.getFullYear();
+  }else{
+	  results = 'Wrong Date';
   }
 
 return results;

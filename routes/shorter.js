@@ -25,6 +25,8 @@ function shorty(req,res){
 	  
     })
 	
+  }else{
+	  res.status(404).send('Wrong URL. Try again.');
   }
 	
 
