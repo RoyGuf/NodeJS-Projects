@@ -3,7 +3,7 @@ function time (timestamp){
   var results = {
     unix: null,
     natural: null
-  }
+  };
   var mon = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   var date;
   if(!isNaN(parseInt(timestamp))){
